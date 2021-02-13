@@ -15,9 +15,9 @@
     <div class="container">
         <div class="d-flex justify-content-center align-items-center">
             <div class="calculator">
-                <div class="display" id="display">
+                <div class="display">
                     <div class="d-flex justify-content-end">
-                        <h2>0</h2>
+                        <h2 id="display">056</h2>
                     </div>
                 </div>
                 <br>
@@ -83,6 +83,15 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        document.getElementById('cBtn').addEventListener('click', function(){
+            var displayValue = document.getElementById('display').innerHTML;
+            var displayValueNum = parseInt(displayValue);
+            document.getElementById('display').innerHTML = 0;
+        })
+    </script>
+
 </body>
 
 </html>
