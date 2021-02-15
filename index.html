@@ -21,75 +21,126 @@
                     </div>
                 </div>
                 <br>
-                <div class="row justify-content-around">
-                    <div class="col">
-                        <button id="sevenBtn" class="btn btn-light btn-block"><b>7</b></button>
+                <div id="numbers">
+                    <div class="row justify-content-around">
+                        <div class="col">
+                            <button id="sevenBtn" class="btn btn-light btn-block numbers"><b>7</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="eightBtn" class="btn btn-light btn-block numbers"><b>8</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="nineBtn" class="btn btn-light btn-block numbers"><b>9</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="slashBtn" class="btn btn-light btn-block numbers"><b>/</b></button>
+                        </div>
                     </div>
-                    <div class="col">
-                        <button id="eightBtn" class="btn btn-light btn-block"><b>8</b></button>
+                    <br>
+                    <div class="row justify-content-around">
+                        <div class="col">
+                            <button id="fourBtn" class="btn btn-light btn-block numbers"><b>4</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="fiveBtn" class="btn btn-light btn-block numbers"><b>5</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="sixBtn" class="btn btn-light btn-block numbers"><b>6</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="xBtn" class="btn btn-light btn-block numbers"><b>x</b></button>
+                        </div>
                     </div>
-                    <div class="col">
-                        <button id="nineBtn" class="btn btn-light btn-block"><b>9</b></button>
+                    <br>
+                    <div class="row justify-content-around">
+                        <div class="col">
+                            <button id="oneBtn" class="btn btn-light btn-block numbers"><b>1</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="twoBtn" class="btn btn-light btn-block numbers"><b>2</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="threeBtn" class="btn btn-light btn-block numbers"><b>3</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="minusBtn" class="btn btn-light btn-block numbers"><b>-</b></button>
+                        </div>
                     </div>
-                    <div class="col">
-                        <button id="slashBtn" class="btn btn-light btn-block"><b>/</b></button>
-                    </div>
-                </div>
-                <br>
-                <div class="row justify-content-around">
-                    <div class="col">
-                        <button id="fourBtn" class="btn btn-light btn-block"><b>4</b></button>
-                    </div>
-                    <div class="col">
-                        <button id="fiveBtn" class="btn btn-light btn-block"><b>5</b></button>
-                    </div>
-                    <div class="col">
-                        <button id="sixBtn" class="btn btn-light btn-block"><b>6</b></button>
-                    </div>
-                    <div class="col">
-                        <button id="xBtn" class="btn btn-light btn-block"><b>x</b></button>
-                    </div>
-                </div>
-                <br>
-                <div class="row justify-content-around">
-                    <div class="col">
-                        <button id="oneBtn" class="btn btn-light btn-block"><b>1</b></button>
-                    </div>
-                    <div class="col">
-                        <button id="twoBtn" class="btn btn-light btn-block"><b>2</b></button>
-                    </div>
-                    <div class="col">
-                        <button id="threeBtn" class="btn btn-light btn-block"><b>3</b></button>
-                    </div>
-                    <div class="col">
-                        <button id="minusBtn" class="btn btn-light btn-block"><b>-</b></button>
-                    </div>
-                </div>
-                <br>
-                <div class="row justify-content-around">
-                    <div class="col">
-                        <button id="cBtn" class="btn btn-light btn-block"><b>C</b></button>
-                    </div>
-                    <div class="col">
-                        <button id="zeroBtn" class="btn btn-light btn-block"><b>0</b></button>
-                    </div>
-                    <div class="col">
-                        <button id="equalBtn" class="btn btn-light btn-block"><b>=</b></button>
-                    </div>
-                    <div class="col">
-                        <button id="plusBtn" class="btn btn-light btn-block"><b>+</b></button>
+                    <br>
+                    <div class="row justify-content-around">
+                        <div class="col">
+                            <button id="cBtn" class="btn btn-light btn-block"><b>C</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="zeroBtn" class="btn btn-light btn-block numbers"><b>0</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="equalBtn" class="btn btn-light btn-block numbers"><b>=</b></button>
+                        </div>
+                        <div class="col">
+                            <button id="plusBtn" class="btn btn-light btn-block numbers"><b>+</b></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <script>
-        document.getElementById('cBtn').addEventListener('click', function(){
-            var displayValue = document.getElementById('display').innerHTML;
-            var displayValueNum = parseInt(displayValue);
-            document.getElementById('display').innerHTML = 0;
+
+    <script>        
+        var totalNumber = document.getElementById("display");
+        totalNumber.textContent = "0";
+
+        number = '';
+        document.getElementById('sevenBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
         })
+
+        document.getElementById('eightBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
+        })
+        document.getElementById('nineBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
+        })
+
+        document.getElementById('sixBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
+        })
+        document.getElementById('fiveBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
+        })
+        document.getElementById('fourBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
+        })
+        document.getElementById('threeBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
+        })
+        document.getElementById('twoBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
+        })
+        document.getElementById('oneBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
+        })
+        document.getElementById('zeroBtn').addEventListener('click', function (e) {
+            number = number + e.target.textContent;
+            totalNumber.textContent = number;
+        })
+        
+             
+        document.getElementById('cBtn').addEventListener('click', function () {            
+            var totalNumber = document.getElementById("display");
+            totalNumber.textContent = "0";
+            number = "";
+        })
+
     </script>
 
 </body>
