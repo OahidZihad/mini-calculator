@@ -86,16 +86,18 @@
         </div>
     </div>
 
-    <script>        
+    <script>
         var totalNumber = document.getElementById("display");
         totalNumber.textContent = "0";
 
-        number = '';
+        var number = '';
+        var secondNumber = '';
+        var operator = '';
+
         document.getElementById('sevenBtn').addEventListener('click', function (e) {
             number = number + e.target.textContent;
             totalNumber.textContent = number;
         })
-
         document.getElementById('eightBtn').addEventListener('click', function (e) {
             number = number + e.target.textContent;
             totalNumber.textContent = number;
@@ -104,7 +106,6 @@
             number = number + e.target.textContent;
             totalNumber.textContent = number;
         })
-
         document.getElementById('sixBtn').addEventListener('click', function (e) {
             number = number + e.target.textContent;
             totalNumber.textContent = number;
@@ -133,9 +134,50 @@
             number = number + e.target.textContent;
             totalNumber.textContent = number;
         })
-        
-             
-        document.getElementById('cBtn').addEventListener('click', function () {            
+
+        document.getElementById('slashBtn').addEventListener('click', function () {
+            operator = this.textContent;
+            secondNumber = number;
+            number = '';
+            totalNumber.textContent = operator;
+        })
+        document.getElementById('xBtn').addEventListener('click', function () {
+            operator = this.textContent;
+            secondNumber = number;
+            number = '';
+            totalNumber.textContent = operator;
+        })
+        document.getElementById('minusBtn').addEventListener('click', function () {
+            operator = this.textContent;
+            secondNumber = number;
+            number = '';
+            totalNumber.textContent = operator;
+        })
+        document.getElementById('plusBtn').addEventListener('click', function () {
+            operator = this.textContent;
+            secondNumber = number;
+            number = '';
+            totalNumber.textContent = operator;
+        })
+
+        document.getElementById('equalBtn').addEventListener('click', function () {
+            if (operator == '/') {
+                number = (parseInt(secondNumber) / parseInt(number)).toFixed(3);
+            }
+            else if (operator == 'x') {
+                number = (parseInt(secondNumber) * parseInt(number)).toString();
+            }
+            else if (operator == '-') {
+                number = (parseInt(secondNumber) - parseInt(number)).toString();
+            }
+            else if (operator == '+') {
+                number = (parseInt(secondNumber) + parseInt(number)).toString();
+            }
+            totalNumber.textContent = number;
+            number = '';
+        })
+
+        document.getElementById('cBtn').addEventListener('click', function () {
             var totalNumber = document.getElementById("display");
             totalNumber.textContent = "0";
             number = "";
